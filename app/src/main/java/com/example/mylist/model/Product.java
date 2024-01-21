@@ -4,10 +4,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 @Entity
-public class Product {
+public class Product implements Comparable<Product> {
     @ColumnInfo(name = "name")
     private String name;
 
@@ -26,7 +27,9 @@ public class Product {
         return uid;
     }
 
-    public void setUid(int uid){this.uid = uid;}
+    public void setUid(int uid){
+        this.uid = uid;
+    }
 
     public Product(int uid, String name) {
         this.uid = uid;
@@ -47,5 +50,15 @@ public class Product {
     @Override
     public int hashCode() {
         return Objects.hash(name, uid);
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        if (this.uid < o.uid){
+            return -1;
+        } else if (this.uid > o.uid) {
+            return 1;
+        }
+        return 0;
     }
 }

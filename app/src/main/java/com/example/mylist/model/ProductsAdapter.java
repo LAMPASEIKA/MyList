@@ -19,6 +19,11 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
     private SortedList<Product> products = new SortedList<>(Product.class, new SortedList.Callback<Product>() {
         @Override
         public int compare(Product product, Product product2) {
+            if (product.getUid() < product2.getUid()){
+                return -1;
+            } else if (product.getUid() > product2.getUid()) {
+                return 1;
+            }
             return 0;
         }
 
@@ -74,23 +79,28 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
         products.add(product);
     }
 
-    public Product removeItemAt(int index) {
-        return products.removeItemAt(index);
+    public void removeItemAt(int index) {
+        products.removeItemAt(index);
     }
 
     public void setItems(List<Product> productslist) {
         products.replaceAll(productslist);
     }
 
-    public SortedList<Product> getList(){
+    public SortedList<Product> getProductList(){
         return products;
+    }
+
+    public int getIndex(){
+        if (products.size() > 0){
+            return products.get(products.size() - 1).getUid() + 1;
+        }
+        return 1;
     }
 
     static class ProductViewHolder extends RecyclerView.ViewHolder {
 
         TextView textView;
-
-        Product product;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
