@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.main.MainActivity"
+    android:layout_gravity="center"
+    android:background="@color/back">
+
+    <LinearLayout
+        android:id="@+id/LL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ET"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50sp"
+            android:hint="@string/ET"
+            android:minHeight="48dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black">
+        </EditText>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50sp"
+        android:layout_marginEnd="60sp"
+        android:contentDescription="@string/app_name"
+        android:backgroundTint="@color/green">
+    </Button>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@+id/LL"
+        android:layout_marginVertical="20dp">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>
