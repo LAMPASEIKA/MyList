@@ -81,6 +81,9 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
 
     public void removeItemAt(int index) {
         products.removeItemAt(index);
+        for (int i = index; i < products.size(); i++){
+            products.updateItemAt(i, new Product(i+1, products.get(i).getName()));
+        }
     }
 
     public void setItems(List<Product> productslist) {

@@ -2,8 +2,6 @@ package com.example.mylist.screens.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,7 +9,6 @@ import androidx.recyclerview.widget.SortedList;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -20,8 +17,6 @@ import com.example.mylist.R;
 import com.example.mylist.databinding.ActivityMainBinding;
 import com.example.mylist.model.Product;
 import com.example.mylist.model.ProductsAdapter;
-
-import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {

@@ -4,11 +4,10 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.util.Comparator;
 import java.util.Objects;
 
 @Entity
-public class Product implements Comparable<Product> {
+public class Product{
     @ColumnInfo(name = "name")
     private String name;
 
@@ -52,13 +51,4 @@ public class Product implements Comparable<Product> {
         return Objects.hash(name, uid);
     }
 
-    @Override
-    public int compareTo(Product o) {
-        if (this.uid < o.uid){
-            return -1;
-        } else if (this.uid > o.uid) {
-            return 1;
-        }
-        return 0;
-    }
 }
